@@ -1,7 +1,38 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+
+<ion-grid>
+  <ion-row>
+    <ion-col col-10><ion-searchbar></ion-searchbar></ion-col>
+    <ion-col col-2>
+      {{posts}}
+      <!--<ion-list>
+        <ion-item *ngFor="let post of posts">
+          {{reward_points}}
+        </ion-item>
+      </ion-list>-->
+      <ion-title>Points</ion-title>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="segmentoptions">
+      <ion-segment-button value="foryou">
+        For You
+      </ion-segment-button>
+      <ion-segment-button value="offers">
+        Offers
+      </ion-segment-button>
+      <ion-segment-button value="giftcard">
+        Gift Card
+      </ion-segment-button>
+      <ion-segment-button value="discover">
+        Discover
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
 </ion-header>
 
 <ion-content padding>
