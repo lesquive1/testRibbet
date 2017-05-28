@@ -4,13 +4,10 @@
   <ion-row>
     <ion-col col-10><ion-searchbar></ion-searchbar></ion-col>
     <ion-col col-2>
-      {{posts}}
-      <!--<ion-list>
-        <ion-item *ngFor="let post of posts">
-          {{reward_points}}
-        </ion-item>
-      </ion-list>-->
-      <ion-title>Points</ion-title>
+      <ion-grid>
+        <ion-row>{{posts}}</ion-row>
+        <ion-row>Points</ion-row>
+      </ion-grid>
     </ion-col>
   </ion-row>
 </ion-grid>
@@ -35,14 +32,71 @@
 
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+
+  <div [ngSwitch]="segmentoptions" >
+
+    <!--<ion-slides *ngSwitchCase="'foryou'" >
+      <ion-slide *ngFor="let card of cards"
+                 style="width:750px;height:350px" >
+        <ion-card>
+          <img src = {{card.card_img}}
+                 style="width:500px;height:250px" />
+          <ion-card-content>
+            <ion-card-title>
+              {{card.company_name}}
+            </ion-card-title>
+          </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>-->
+<!--
+    <ion-list *ngSwitchCase="'foryou'">
+      
+        <ion-item *ngFor="let card of cards" >
+          <img src = {{card.card_img}}
+              style="width:500px;height:250px" />
+          <p>{{card.company_name}}</p>
+        </ion-item>
+
+    </ion-list>-->
+
+    <ion-list *ngSwitchCase="'foryou'">
+      <ion-item>
+
+        <ion-scroll scrollX="true" direction="x">
+          <ion-card *ngFor="let card of cards" >
+
+            <ion-card-content>
+              <img src = {{card.card_img}}
+              style="width:250px;height:125px" />
+                <ion-card-title>
+                  {{card.company_name}}
+                </ion-card-title>
+            </ion-card-content>
+          </ion-card>
+        </ion-scroll>
+        
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'offers'">
+      <ion-item>
+        <h2>Offers!</h2>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'giftcard'">
+      <ion-item>
+        <h2>Gift Card!</h2>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'discover'">
+      <ion-item>
+        <h2>Discover!</h2>
+      </ion-item>
+    </ion-list>
+  </div>
+
 </ion-content>

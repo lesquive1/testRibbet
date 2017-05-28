@@ -12,13 +12,19 @@ import 'rxjs/add/operator/map';
 export class HomePage {
 
   posts: any;
+  cards: any;
+  
+  //public products:Array<Product> = [];
+
+  segmentoptions: string = "foryou";
 
   constructor(public navCtrl: NavController,
               public http: Http) {
 
     this.http.get('/api').map(res => res.json()).subscribe(data => {
         this.posts = data.reward_points;
-        console.log(this.posts);
+        this.cards = data.cards;
+        console.log(this.cards);
     });
 
   }
