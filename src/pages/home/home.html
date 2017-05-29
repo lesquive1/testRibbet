@@ -1,33 +1,43 @@
 <ion-header>
 
-<ion-grid>
-  <ion-row>
-    <ion-col col-10><ion-searchbar></ion-searchbar></ion-col>
-    <ion-col col-2>
-      <ion-grid>
-        <ion-row>{{posts}}</ion-row>
-        <ion-row>Points</ion-row>
-      </ion-grid>
-    </ion-col>
-  </ion-row>
-</ion-grid>
-
-
   <ion-toolbar no-border-top>
-    <ion-segment [(ngModel)]="segmentoptions">
-      <ion-segment-button value="foryou">
-        For You
-      </ion-segment-button>
-      <ion-segment-button value="offers">
-        Offers
-      </ion-segment-button>
-      <ion-segment-button value="giftcard">
-        Gift Card
-      </ion-segment-button>
-      <ion-segment-button value="discover">
-        Discover
-      </ion-segment-button>
-    </ion-segment>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-10><ion-searchbar></ion-searchbar></ion-col>
+      <ion-col col-2>
+        <ion-grid>
+          <ion-row style="color: white;">
+            {{posts}}
+          </ion-row>
+          <ion-row style="color: white;">
+            Points
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+
+        <ion-segment [(ngModel)]="segmentoptions">
+          <ion-segment-button value="foryou" style="color: white;">
+            For You
+          </ion-segment-button>
+          <ion-segment-button value="offers" style="color: white;">
+            Offers
+          </ion-segment-button>
+          <ion-segment-button value="giftcard" style="color: white;">
+            Gift Card
+          </ion-segment-button>
+          <ion-segment-button value="discover" style="color: white;">
+            Discover
+          </ion-segment-button>
+        </ion-segment>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
   </ion-toolbar>
 
 </ion-header>
