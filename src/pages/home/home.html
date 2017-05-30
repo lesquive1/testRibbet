@@ -1,48 +1,50 @@
 <ion-header>
 
+  <ion-navbar>
+
+  </ion-navbar>
+
   <ion-toolbar no-border-top>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col col-10><ion-searchbar></ion-searchbar></ion-col>
-      <ion-col col-2>
-        <ion-grid>
-          <ion-row style="color: white;">
-            {{posts}}
-          </ion-row>
-          <ion-row style="color: white;">
-            Points
-          </ion-row>
-        </ion-grid>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col col-12>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-10><ion-searchbar></ion-searchbar></ion-col>
+        <ion-col col-2>
+          <ion-grid>
+            <ion-row text-center style="color: white;">
+              {{posts}}
+            </ion-row>
+            <ion-row text-center style="color: white;">
+              Points
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+      </ion-row>
 
-        <ion-segment [(ngModel)]="segmentoptions">
-          <ion-segment-button value="foryou" style="color: white;">
-            For You
-          </ion-segment-button>
-          <ion-segment-button value="offers" style="color: white;">
-            Offers
-          </ion-segment-button>
-          <ion-segment-button value="giftcard" style="color: white;">
-            Gift Card
-          </ion-segment-button>
-          <ion-segment-button value="discover" style="color: white;">
-            Discover
-          </ion-segment-button>
-        </ion-segment>
-
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+    </ion-grid>
 
   </ion-toolbar>
+
+      <ion-segment [(ngModel)]="segmentoptions">
+      <ion-segment-button value="foryou" style="background-color:orange;color: white;">
+        For You
+      </ion-segment-button>
+      <ion-segment-button value="offers" style="background-color:orange;color: white;">
+        Offers
+      </ion-segment-button>
+      <ion-segment-button value="giftcard" style="background-color:orange;color: white;">
+        Gift Card
+      </ion-segment-button>
+      <ion-segment-button value="discover" style="background-color:orange;color: white;">
+        Discover
+      </ion-segment-button>
+    </ion-segment>
 
 </ion-header>
 
 <ion-content>
+
+
 
   <div [ngSwitch]="segmentoptions" >
 
@@ -71,7 +73,13 @@
 
     </ion-list>-->
 
+
+
     <ion-list *ngSwitchCase="'foryou'">
+      <ion-list-header>
+        <h1>Hi there!</h1>
+        <h1>Local spots for you today</h1>
+      </ion-list-header>
       <ion-item>
 
         <ion-scroll scrollX="true" direction="x">

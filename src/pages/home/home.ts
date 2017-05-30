@@ -21,7 +21,7 @@ export class HomePage {
   constructor(public navCtrl: NavController,
               public http: Http) {
     //https://ribbettest.herokuapp.com
-    this.http.get('/api').map(res => res.json()).subscribe(data => {
+    this.http.get('https://ribbettest.herokuapp.com/api').map(res => res.json()).subscribe(data => {
         this.posts = data.reward_points;
         this.cards = data.cards;
         console.log(this.cards);
